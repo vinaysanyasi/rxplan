@@ -44,9 +44,21 @@ INSERT INTO RxPlan (PLAN_CODE, MEMBER_COUNT, PLAN_NAME, DED, CLIENT_ID)
 			
 INSERT INTO RxPlan (PLAN_CODE, MEMBER_COUNT, PLAN_CODE, DED)
 			VALUES ('TEMPLATE01', 0, 'Template Plan', 1000);
+			
+			
+			
+
+============SELECT=================			
+			
+SELECT c.CLIENT_ID, c.CLIENT_NAME, c.STATE
+FROM Client as c;
+
+SELECT p.CLIENT_ID, p.PLAN_CODE, p.PLAN_NAME, p.MEMBER_COUNT, p.DED
+FROM RxPlan as p; 
+
+SELECT c.CLIENT_ID, c.CLIENT_NAME, p.CLIENT_ID, p.PLAN_CODE, p.PLAN_NAME, p.MEMBER_COUNT, p.DED
+FROM Client as c, RxPlan as p;
 		
-			
-			
 			
 			
 			
