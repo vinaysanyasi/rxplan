@@ -1,0 +1,68 @@
+CREATE TABLE Client
+(	ID 			CHAR (20) PRIMARY KEY, 
+	CLIENT_NAME CHAR (100),
+	STATE 		CHAR (2));
+	
+	CREATE TABLE RxPlan
+	(
+		PLAN_CODE 	 CHAR(30),
+		MEMBER_COUNT INT      NOT NULL,
+		PLAN_NAME 	 CHAR(100),
+		DED 		 DOUBLE,
+		CLIENT_ID 	 CHAR(20),
+		PRIMARY KEY (PLAN_CODE),
+		FOREIGN KEY (CLIENT_ID) REFERENCES Client(ID)
+		
+		);
+	
+	==============INSERT===============
+INSERT INTO Client (ID, CLIENT_NAME, STATE)	
+			VALUES  ('1001', 'CARECONNECT', 'NY');
+			
+INSERT INTO Client (ID, CLIENT_NAME, STATE)
+			VALUES  ('1002', 'NORTHSHORE', 'NY' );
+			
+INSERT INTO Client (ID, CLIENT_NAME, STATE)
+			VALUES ('1003', 'VANGUARD', 'AZ');
+			
+INSERT INTO Client (ID, CLIENT_NAME, STATE)
+			VALUES ('1004', 'Phoenix Health Plan', 'AZ');
+			
+			
+INSERT INTO RxPlan (PLAN_CODE, PLAN_NAME, MEMBER_COUNT, DED, CLIENT_ID)	
+			VALUES ('NSHSA1', 'NorthShore HSA1', 10000, 5000, '1002');
+			
+INSERT INTO RxPlan (PLAN_CODE, MEMBER_COUNT, PLAN_NAME, DED, CLIENT_ID)
+			VALUES  ('NSEMP1', 500, 'NorthShore Employee1', 1000, '1002')
+			
+INSERT INTO RxPlan (PLAN_CODE, MEMBER_COUNT, PLAN_NAME, DED, CLIENT_ID)
+			VALUES ('CC PLATINUM', 40, 'CareConnect Platinum', 4000, '1001');
+			
+						
+INSERT INTO RxPlan (PLAN_CODE, MEMBER_COUNT, PLAN_NAME, DED, CLIENT_ID)
+			VALUES  ('PHPHSA', 300, 'Phoenix Health Plan', 2500, '12005');
+			
+INSERT INTO RxPlan (PLAN_CODE, MEMBER_COUNT, PLAN_CODE, DED)
+			VALUES ('TEMPLATE01', 0, 'Template Plan', 1000);
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+			=====
